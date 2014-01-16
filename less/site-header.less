@@ -5,12 +5,10 @@ Site Header
 ---------------------------------------------------------------------------------------------------- */
 
 .site-header {
-	background-color: @white;
+    background: @header-background-color;
 }
 
 .site-header .wrap {
-	// padding: 40px 0;
-	// padding: 4rem 0;
 	.padding-two-values (40, 0);
 }
 
@@ -21,8 +19,6 @@ Site Header
 	float: left;
 	font-family: @font-family-alt;
 	font-weight: @headings-font-weight;
-	// padding: 16px 0;
-	// padding: 1.6rem 0;
 	.padding-two-values (16, 0);
 	width: 320px;
 }
@@ -32,12 +28,8 @@ Site Header
 }
 
 .site-title {
-	// font-size: 28px;
-	// font-size: 2.8rem;
 	.font-size (@font-size-medium);
 	line-height: 1;
-	// margin: 0 0 8px;
-	// margin: 0 0 0.8rem;
 	.margin-three-values (0, 0, 8);
 	text-transform: uppercase;
 }
@@ -49,8 +41,6 @@ Site Header
 
 .site-description {
 	color: @gray-light;
-	// font-size: 16px;
-	// font-size: 1.6rem;
 	.font-size (@font-size-base);
 	font-weight: @font-family-base-weight;
 	line-height: 1;
@@ -73,8 +63,10 @@ Site Header
 /* Logo, hide text */
 
 .header-image .site-header .wrap {
-	background: url(images/logo.png) no-repeat left;
+	background: @logo;
 	padding: 0;
+	height: 200px;
+	margin: 10px auto;
 }
 
 .header-image .site-title a {

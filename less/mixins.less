@@ -156,3 +156,28 @@
 	-ms-transition:     @transition;
 	-o-transition:      @transition;
 }
+
+.padding (@padding1: 16) {
+    @padding1Value: (@padding1 / 10);
+    padding: (@padding1 / 1px);
+    padding: ~"@{padding1Value}rem";
+}
+
+.text-indent (@indent1: 16) {
+    @indent1Value: (@indent1 / 10);
+    text-indent: (@indent1 / 1px);
+    text-indent: ~"@{indent1Value}rem";
+}
+
+.long-shadow() {
+    box-shadow: rgba(28, 37, 48, .5) 1px 1px,
+    rgba(28, 37, 48, .5) 2px 2px,
+    rgba(28, 37, 48, .5) 3px 3px,
+    rgba(28, 37, 48, .5) 4px 4px,
+    rgba(28, 37, 48, .5) 5px 5px,
+    rgba(28, 37, 49, .5) 6px 6px,
+    rgba(28, 37, 49, .5) 7px 7px,
+    rgba(28, 38, 49, .5) 8px 8px,
+    rgba(28, 38, 49, .5) 9px 9px,
+    rgba(29, 38, 49, .5) 10px 10px;
+}

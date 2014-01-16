@@ -1,0 +1,34 @@
+// search-form.less
+
+/*
+Search Form
+---------------------------------------------------------------------------------------------------- */
+
+.search-form {
+	position: relative;
+}
+
+.search-form input[type="submit"] {
+	font-family: FontAwesome;
+	clip: inherit;
+	width: 44px;
+	height: 44px;
+	background: @search-icon-background-color;
+	color: @search-icon-color;
+	right: 4px;
+	top: 4px;
+	border-radius: 3px;
+}
+
+.search-form input[type="submit"]:hover {
+	color: @search-icon-hover-color;
+	background: @search-icon-hover-background-color;
+}
+
+.site-header .search-form {
+	width: 189px;
+}
+
+.search-form input {
+    padding-right: 52px;
+}

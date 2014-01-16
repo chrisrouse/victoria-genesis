@@ -14,7 +14,7 @@
 // grays
 @gray-darker:               #ddd;
 @gray-dark:                 #333;
-@gray:                      #666;
+@gray:                      #959896;
 @gray-light:                #999;
 @gray-lighter:              #eee;
 
@@ -22,6 +22,7 @@
 @orange:                    #f35225;
 @orange-light:              #f15123;
 @yellow:                    #ff0;
+@green:                     #6B705D;
 
 // Scaffolding
 // -------------------------
@@ -38,13 +39,13 @@
 // Typography
 // -------------------------
 
-@font-family-sans-serif:    'Helvetica Neue', Helvetica, Arial, sans-serif;
-@font-family-sans-serif-alt: Lato, sans-serif;
-@font-family-serif:         Georgia, "Times New Roman", Times, serif;
+@font-family-sans-serif:    'Oswald', Helvetica, Arial, sans-serif;
+@font-family-serif:         'Lora', Georgia, serif;
 @font-family-monospace:     Menlo, Monaco, Consolas, "Courier New", monospace;
 @font-family-base:          @font-family-sans-serif;
-@font-family-alt:           @font-family-sans-serif-alt;
-@font-family-base-weight:   300;
+@font-family-alt:           @font-family-serif;
+@font-family-weight-light:  300;
+@font-family-base-weight:   400;
 @font-family-weight-bold:   700;
 
 @font-size-base:            16; // Mixin handles px and rem, so don't add those here.
@@ -76,6 +77,53 @@
 @border-radius-base:        3px;
 
 
+// Header
+@logo:                      url(images/finley-logo-white.png) no-repeat center;
+@header-background-color:   @white;
 
+// Primary Navbar
+@navbar-background-color:   @green;
+@navbar-font-color:         @white;
+@navbar-font-family:        @font-family-base;
+@navbar-text-align:         right;
+@navbar-font-weight:        @font-family-weight-light;
+@navbar-letter-spacing:     2px;
+@navbar-submenu-background-color:   darken(@navbar-background-color, 10%);
+@navbar-submenu-font-color: @white;
 
+// Secondary Navbar
+@secondary-navbar-background-color:   @gray;
+@secondary-navbar-font-color:         @white;
+@secondary-navbar-font-family:        @font-family-base;
+@secondary-navbar-text-align:         right;
+@secondary-navbar-font-weight:        @font-family-weight-light;
+@secondary-navbar-letter-spacing:     2px;
+@secondary-navbar-submenu-background-color:   darken(@secondary-navbar-background-color, 10%);
+@secondary-navbar-submenu-font-color: @white;
 
+// Search Form Button
+@search-icon-color:                     @gray-light;
+@search-icon-background-color:          @gray-dark;
+@search-icon-hover-color:               @gray-dark;
+@search-icon-hover-background-color:    @gray-light;
+
+// Buttons
+// -------------------------
+
+@btn-text-color:            @white;
+
+@btn-default-color:         @gray; // white
+@btn-primary-color:         #5A85B0; // blue
+@btn-success-color:         #75A060; // green
+@btn-info-color:            #99B5CD; // light-blue
+@btn-warning-color:         #E9AA5B; // orange
+@btn-danger-color:          #CD543F; // red
+@btn-link-color:            #5A85AF; // blue text
+
+@btn-hover-default-color:         darken(@gray,15%); // white
+@btn-hover-primary-color:         darken(#5A85B0,15%); // blue
+@btn-hover-success-color:         darken(#75A060,15%); // green
+@btn-hover-info-color:            darken(#99B5CD,15%); // light-blue
+@btn-hover-warning-color:         darken(#E9AA5B,15%); // orange
+@btn-hover-danger-color:          darken(#CD543F,15%); // red
+@btn-hover-link-color:            darken(#5A85AF,15%); // blue text

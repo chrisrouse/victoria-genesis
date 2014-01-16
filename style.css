@@ -1,17 +1,17 @@
 /*
-	Theme Name: Victoria
-	Description: Victoria is a Genesis 2.0 child theme.
+	Theme Name: Genesis Sample LESS
+	Description: This is the sample theme created for the Genesis Framework built with LESS.
 	Author: Chris Rouse
 	Author URI: http://www.chrisrouse.us/
-	Version: 1.0.0
+	Version: 2.0.1
 
-	Tags: black, orange, white, one-column, two-columns, three-columns, fixed-width, custom-menu, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, LESS
+	Tags: black, orange, white, one-column, two-columns, three-columns, fixed-width, custom-menu, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
 
 	Template: genesis
 	Template Version: 2.0.1
 
-	License: GPL-3.0
-	License URI: http://www.gnu.org/licenses/gpl-3.0.txt
+	License: GPL-2.0+
+	License URI: http://www.opensource.org/licenses/gpl-license.php
 */
 /* Table of Contents
 
@@ -52,8 +52,10 @@
 		- Pagination
 		- Comments
 	- Sidebars
+	- Search Form
 	- Footer Widgets
 	- Site Footer
+	- Theme Colors
 	- Media Queries
 		- max-width: 1139px
 		- max-width: 1023px
@@ -288,11 +290,11 @@ html {
 }
 body {
   background-color: #f5f5f5;
-  color: #666666;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #959896;
+  font-family: 'Oswald', Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-size: 1.6rem;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.625;
 }
 a,
@@ -317,7 +319,7 @@ textarea:focus,
   color: #ffffff;
 }
 a {
-  color: #666666;
+  color: #959896;
   text-decoration: none;
 }
 a img {
@@ -331,8 +333,6 @@ p {
   margin: 0px 0px 24px;
   margin: 0rem 0rem 2.4rem;
   padding: 0;
-  -ms-word-wrap: break-word;
-  word-wrap: break-word;
 }
 strong {
   font-weight: 700;
@@ -376,7 +376,7 @@ h4,
 h5,
 h6 {
   color: #333333;
-  font-family: Lato, sans-serif;
+  font-family: 'Lora', Georgia, serif;
   font-weight: 700;
   line-height: 1.2;
   margin: 0px 0px 16px;
@@ -713,7 +713,7 @@ img.alignright,
 }
 .author-box-title {
   color: #333333;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Oswald', Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-size: 1.6rem;
   margin-bottom: 4px;
@@ -735,17 +735,13 @@ img.alignright,
   font-size: 36px;
   font-size: 3.6rem;
   line-height: 1;
-  -ms-word-wrap: break-word;
-  word-wrap: break-word;
 }
 .entry-title a,
 .sidebar .widget-title a {
   color: #333333;
-  -ms-word-wrap: break-word;
-  word-wrap: break-word;
 }
 .entry-title a:hover {
-  color: #666666;
+  color: #959896;
 }
 .widget-title {
   font-size: 16px;
@@ -850,7 +846,7 @@ img#wpstats {
 Site Header
 ---------------------------------------------------------------------------------------------------- */
 .site-header {
-  background-color: #ffffff;
+  background: #ffffff;
 }
 .site-header .wrap {
   padding: 40px 0px;
@@ -860,7 +856,7 @@ Site Header
 --------------------------------------------- */
 .title-area {
   float: left;
-  font-family: Lato, sans-serif;
+  font-family: 'Lora', Georgia, serif;
   font-weight: 700;
   padding: 16px 0px;
   padding: 1.6rem 0rem;
@@ -885,7 +881,7 @@ Site Header
   color: #999999;
   font-size: 16px;
   font-size: 1.6rem;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1;
   margin-bottom: 0;
 }
@@ -901,8 +897,10 @@ Site Header
 }
 /* Logo, hide text */
 .header-image .site-header .wrap {
-  background: url(images/logo.png) no-repeat left;
+  background: url(images/finley-logo-white.png) no-repeat center;
   padding: 0;
+  height: 200px;
+  margin: 10px auto;
 }
 .header-image .site-title a {
   float: left;
@@ -934,7 +932,7 @@ Site Navigation
 .genesis-nav-menu {
   clear: both;
   color: #999999;
-  font-family: Lato, sans-serif;
+  font-family: 'Lora', Georgia, serif;
   line-height: 1.5;
   width: 100%;
 }
@@ -1078,8 +1076,6 @@ Content Area
 .quote-caption {
   margin-bottom: 26px;
   margin-bottom: 2.6rem;
-  -ms-word-wrap: break-word;
-  word-wrap: break-word;
 }
 .entry-content ol,
 .entry-content ul {
@@ -1263,6 +1259,33 @@ Sidebars
   background-color: #333333;
 }
 /*
+Search Form
+---------------------------------------------------------------------------------------------------- */
+.search-form {
+  position: relative;
+}
+.search-form input[type="submit"] {
+  font-family: FontAwesome;
+  clip: inherit;
+  width: 44px;
+  height: 44px;
+  background: #333333;
+  color: #999999;
+  right: 4px;
+  top: 4px;
+  border-radius: 3px;
+}
+.search-form input[type="submit"]:hover {
+  color: #333333;
+  background: #999999;
+}
+.site-header .search-form {
+  width: 189px;
+}
+.search-form input {
+  padding-right: 52px;
+}
+/*
 Footer Widgets
 ---------------------------------------------------------------------------------------------------- */
 .footer-widgets {
@@ -1291,7 +1314,7 @@ Footer Widgets
   float: right;
 }
 .footer-widgets a {
-  border-bottom: 1px solid #666666;
+  border-bottom: 1px solid #959896;
   color: #999999;
 }
 .footer-widgets a:hover {
@@ -1330,6 +1353,200 @@ Site Footer
 }
 .site-footer p {
   margin-bottom: 0;
+}
+/*
+Theme Colors
+---------------------------------------------------------------------------------------------------- */
+/* Victoria Blue
+--------------------------------------------- */
+.victoria-blue .nav-primary .current-menu-item > a,
+.victoria-blue .nav-primary .v .current-menu-item > a:hover,
+.victoria-blue .nav-primary a:hover,
+.victoria-blue .site-title a:hover,
+.victoria-blue a,
+.victoria-blue.victoria-home .featured-content a:hover {
+  color: #87D4FA;
+}
+.victoria-blue .archive-pagination li a:hover,
+.victoria-blue .archive-pagination li.active a,
+.victoria-blue .breadcrumb a,
+.victoria-blue .nav-primary a,
+.victoria-blue .home-top a:hover,
+.victoria-blue .site-title a,
+.victoria-blue a:hover.button,
+.victoria-blue a.button {
+  color: #fff;
+}
+.victoria-blue .nav-primary .sub-menu .current-menu-item > a,
+.victoria-blue .site-footer a {
+  color: #999;
+}
+.victoria-blue .archive-pagination a,
+.victoria-blue .entry-title a,
+.victoria-blue .entry-title,
+.victoria-blue .home-top a,
+.victoria-blue .site-footer a:hover,
+.victoria-blue a:hover {
+  color: #333;
+}
+.victoria-blue .nav-primary a:hover,
+.victoria-blue .nav-primary .current-menu-item > a,
+.victoria-blue .nav-primary .v .current-menu-item > a:hover {
+  border-color: #87D4FA;
+}
+.victoria-blue .archive-pagination li a:hover,
+.victoria-blue .archive-pagination li.active a,
+.victoria-blue a:hover.button,
+.victoria-blue button:hover,
+.victoria-blue input:hover[type="button"],
+.victoria-blue input:hover[type="reset"],
+.victoria-blue input:hover[type="submit"],
+body.victoria-blue {
+  background-color: #87D4FA;
+}
+/* Victoria Green
+--------------------------------------------- */
+.victoria-green .nav-primary .current-menu-item > a,
+.victoria-green .nav-primary .v .current-menu-item > a:hover,
+.victoria-green .nav-primary a:hover,
+.victoria-green .site-title a:hover,
+.victoria-green a,
+.victoria-green.victoria-home .featured-content a:hover {
+  color: #9CF5A6;
+}
+.victoria-green .archive-pagination li a:hover,
+.victoria-green .archive-pagination li.active a,
+.victoria-green .breadcrumb a,
+.victoria-green .nav-primary a,
+.victoria-green .home-top a:hover,
+.victoria-green .site-title a,
+.victoria-green a:hover.button,
+.victoria-green a.button {
+  color: #fff;
+}
+.victoria-green .nav-primary .sub-menu .current-menu-item > a,
+.victoria-green .site-footer a {
+  color: #999;
+}
+.victoria-green .archive-pagination a,
+.victoria-green .entry-title a,
+.victoria-green .entry-title,
+.victoria-green .home-top a,
+.victoria-green .site-footer a:hover,
+.victoria-green a:hover {
+  color: #333;
+}
+.victoria-green .nav-primary a:hover,
+.victoria-green .nav-primary .current-menu-item > a,
+.victoria-green .nav-primary .v .current-menu-item > a:hover {
+  border-color: #9CF5A6;
+}
+.victoria-green .archive-pagination li a:hover,
+.victoria-green .archive-pagination li.active a,
+.victoria-green a:hover.button,
+.victoria-green button:hover,
+.victoria-green input:hover[type="button"],
+.victoria-green input:hover[type="reset"],
+.victoria-green input:hover[type="submit"],
+body.victoria-green {
+  background-color: #9CF5A6;
+}
+/* Victoria Orange
+--------------------------------------------- */
+.victoria-orange .nav-primary .current-menu-item > a,
+.victoria-orange .nav-primary .v .current-menu-item > a:hover,
+.victoria-orange .nav-primary a:hover,
+.victoria-orange .site-title a:hover,
+.victoria-orange a,
+.victoria-orange.victoria-home .featured-content a:hover {
+  color: #000;
+}
+.victoria-orange .archive-pagination li a:hover,
+.victoria-orange .archive-pagination li.active a,
+.victoria-orange .breadcrumb a,
+.victoria-orange .nav-primary a,
+.victoria-orange .home-top a:hover,
+.victoria-orange .site-title a,
+.victoria-orange a:hover.button,
+.victoria-orange a.button {
+  color: #fff;
+}
+.victoria-orange .nav-primary .sub-menu .current-menu-item > a,
+.victoria-orange .site-footer a {
+  color: #999;
+}
+.victoria-orange .archive-pagination a,
+.victoria-orange .entry-title a,
+.victoria-orange .entry-title,
+.victoria-orange .home-top a,
+.victoria-orange .site-footer a:hover,
+.victoria-orange a:hover {
+  color: #333;
+}
+.victoria-orange .nav-primary {
+  background-color: #FF5E33;
+}
+.victoria-orange .nav-primary a:hover,
+.victoria-orange .nav-primary .current-menu-item > a,
+.victoria-orange .nav-primary .v .current-menu-item > a:hover {
+  border-color: #FF5E33;
+}
+.victoria-orange .archive-pagination li a:hover,
+.victoria-orange .archive-pagination li.active a,
+.victoria-orange a:hover.button,
+.victoria-orange button:hover,
+.victoria-orange input:hover[type="button"],
+.victoria-orange input:hover[type="reset"],
+.victoria-orange input:hover[type="submit"],
+body.victoria-orange {
+  background-color: #FF5E33;
+}
+/* Victoria Purple
+--------------------------------------------- */
+.victoria-red .nav-primary .current-menu-item > a,
+.victoria-red .nav-primary .v .current-menu-item > a:hover,
+.victoria-red .nav-primary a:hover,
+.victoria-red .site-title a:hover,
+.victoria-red a,
+.victoria-red.victoria-home .featured-content a:hover {
+  color: #5F0C93;
+}
+.victoria-red .archive-pagination li a:hover,
+.victoria-red .archive-pagination li.active a,
+.victoria-red .breadcrumb a,
+.victoria-red .nav-primary a,
+.victoria-red .home-top a:hover,
+.victoria-red .site-title a,
+.victoria-red a:hover.button,
+.victoria-red a.button {
+  color: #fff;
+}
+.victoria-red .nav-primary .sub-menu .current-menu-item > a,
+.victoria-red .site-footer a {
+  color: #999;
+}
+.victoria-red .archive-pagination a,
+.victoria-red .entry-title a,
+.victoria-red .entry-title,
+.victoria-red .home-top a,
+.victoria-red .site-footer a:hover,
+.victoria-red a:hover {
+  color: #333;
+}
+.victoria-red .nav-primary a:hover,
+.victoria-red .nav-primary .current-menu-item > a,
+.victoria-red .nav-primary .v .current-menu-item > a:hover {
+  border-color: #5F0C93;
+}
+.victoria-red .archive-pagination li a:hover,
+.victoria-red .archive-pagination li.active a,
+.victoria-red a:hover.button,
+.victoria-red button:hover,
+.victoria-red input:hover[type="button"],
+.victoria-red input:hover[type="reset"],
+.victoria-red input:hover[type="submit"],
+body.victoria-red {
+  background-color: #5F0C93;
 }
 /*
 Media Queries
@@ -1470,5 +1687,110 @@ Media Queries
   .two-thirds {
     margin: 0;
     width: 100%;
+  }
+  /* Primary Navigation Menu Icon properties */
+  #primary-menu-icon {
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    display: block;
+    padding: 24px 24px;
+    padding: 2.4rem 2.4rem;
+    text-align: center;
+  }
+  #primary-menu-icon::before {
+    color: #eee;
+    content: 'MENU \2630';
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  #primary-menu-icon:hover::before {
+    color: #eee;
+    content: 'MENU \2630';
+  }
+  #primary-menu-icon:active::before {
+    color: #fff;
+    content: 'MENU \2630';
+  }
+  /* Hide Primary Navigation Menu until it's toggled via script */
+  .menu-primary {
+    display: none;
+  }
+  /* Primary Navigation Menu misc properties */
+  .nav-primary {
+    clear: both;
+    color: #999;
+    font-family: Lato, sans-serif;
+    line-height: 1.5;
+    width: 100%;
+    z-index: 9999;
+  }
+  .nav-primary .menu-item {
+    display: block;
+    text-align: left;
+  }
+  .nav-primary a {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+    color: #222;
+    display: block;
+    padding: 20px 24px;
+    padding: 2rem 2.4rem;
+    position: relative;
+  }
+  .nav-primary a:hover,
+  .nav-primary .current-menu-item > a,
+  .nav-primary .sub-menu .current-menu-item > a:hover {
+    background-color: #ddd;
+    color: #222;
+  }
+  .nav-primary .sub-menu .current-menu-item > a {
+    color: #999;
+  }
+  .nav-primary > .menu-item > a {
+    text-transform: uppercase;
+  }
+  .nav-primary .sub-menu {
+    left: 0px;
+    opacity: 1;
+    position: relative;
+    -webkit-transition: opacity 0.4s ease-in-out;
+    -moz-transition: opacity 0.4s ease-in-out;
+    -ms-transition: opacity 0.4s ease-in-out;
+    -o-transition: opacity 0.4s ease-in-out;
+    transition: opacity 0.4s ease-in-out;
+    width: 100%;
+    z-index: 99;
+  }
+  .nav-primary .sub-menu a {
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    font-size: 14px;
+    font-size: 1.4rem;
+    padding: 18px 30px;
+    padding: 1.8rem 3rem;
+    position: relative;
+    width: 100%;
+  }
+  .nav-primary .sub-menu a::before {
+    content: "- ";
+    font-size: 14px;
+    font-size: 1.4rem;
+  }
+  .nav-primary .sub-menu a:hover {
+    background-color: #f7f7f7;
+  }
+  .nav-primary .sub-menu li li a {
+    padding: 18px 40px;
+    padding: 1.8rem 4rem;
+  }
+  .nav-primary .sub-menu .sub-menu {
+    margin: 0;
+  }
+  .nav-primary .menu-item:hover {
+    position: static;
+  }
+  .nav-primary .menu-item:hover > .sub-menu {
+    left: auto;
+    opacity: 1;
   }
 }

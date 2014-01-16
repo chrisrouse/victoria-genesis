@@ -52,3 +52,32 @@ function load_fontawesome_style() {
       wp_register_style( 'font-awesome', 'http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css' );
       wp_enqueue_style( 'font-awesome' );
 }
+
+//* Add support for additional color style options
+add_theme_support( 'genesis-style-selector', array(
+	'victoria-blue'   => __( 'Victoria Blue', 'victoria' ),
+	'victoria-green'  => __( 'Victoria Green', 'victoria' ),
+	'victoria-orange' => __( 'Victoria Orange', 'victoria' ),
+	'victoria-purple' => __( 'Victoria Purple', 'victoria' ),
+) );
+
+//* SEARCH FORM FUNCTIONS */
+//* Clear search form content on focus */
+add_action( 'wp_enqueue_scripts', 'sk_clear_search_form' );
+function sk_clear_search_form() {
+
+	wp_enqueue_script( 'clear-search-form',  get_stylesheet_directory_uri() . '/js/clear-search-form.js', array( 'jquery' ), '1.0.0', true );
+}
+
+//* Make Font Awesome available
+add_action( 'wp_enqueue_scripts', 'enqueue_font_awesome' );
+function enqueue_font_awesome() {
+
+	wp_enqueue_style( 'font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css' );
+}
+
+//* Customize search form input button text
+add_filter( 'genesis_search_button_text', 'sk_search_button_text' );
+function sk_search_button_text( $text ) {
+	return esc_attr( '&#xf002;' );
+}
